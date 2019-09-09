@@ -1,0 +1,17 @@
+{
+    "contents" : "#'@export\ncalculateRSquare<- function(graph) {\n  # calculate degree\n  #library(\"igraph\");\n  d = degree(graph, mode = \"all\") # node'ların dugumlerinin derecelerini bulur\n  dd = degree.distribution(graph, mode = \"all\", cumulative = FALSE) # herbir derecenin gelme olasiligini kac kere o dereceden dugum var ona gore hesaplar. mesela 20 dugumun 3 tanesinin derecesi 1 ise, dugum derecesinin 1 olma olasiligi % 0.15 gibi\n  degree = 1:max(d) # 1'den maksimumum dugun sayisina kadar git\n  probability = dd[-1]\n  # delete blank values\n  nonzero.position = which(probability != 0)\n  probability = probability[nonzero.position]\n  degree = degree[nonzero.position]\n  reg = lm(log(probability) ~ log(degree))\n  cozf = coef(reg)\n  power.law.fit = function(x) exp(cozf[[1]] + cozf[[2]] * log(x))\n  alpha = -cozf[[2]]\n  R.square = summary(reg)$r.squared\n  #   print(paste(\"Alpha =\", round(alpha, 3)))\n  #   print(paste(\"R square =\", round(R.square, 3)))\n  rsquare=round(R.square, 3);\n  \n  #   plot(probability ~ degree, log = \"xy\", xlab = \"Degree (log)\", ylab = \"Probability (log)\", \n  #        col = 1, main = \"Degree Distribution\")\n  #   curve(power.law.fit, col = \"red\", add = T, n = length(d))\n  \n  return (rsquare);\n}\n\n",
+    "created" : 1567645594260.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3265170519",
+    "id" : "393A5882",
+    "lastKnownWriteTime" : 1567886379,
+    "path" : "C:/Program Files/RStudio/workspace/NIAP/R/calculateRSquare.R",
+    "project_path" : "R/calculateRSquare.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

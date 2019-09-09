@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1567800658224.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6C8159DA",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "omim",
+        "contentUrl" : "content?title=omim&file=dfc0438d53974225948c1ee6f997b552.htm",
+        "displayedObservations" : 105,
+        "displayedVariables" : 1,
+        "totalObservations" : 105,
+        "variables" : 1
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

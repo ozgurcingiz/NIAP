@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1567782278936.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F1E6945",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "rslt",
+        "contentUrl" : "content?title=rslt&file=410a0e275efc4780a79e7305fda01469.htm",
+        "displayedObservations" : 2,
+        "displayedVariables" : 8,
+        "totalObservations" : 2,
+        "variables" : 8
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

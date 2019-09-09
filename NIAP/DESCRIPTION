@@ -1,0 +1,13 @@
+Package: NIAP
+Type: Package
+Title: Network Inference and Analysis Package
+Version: 1.0
+Date: 2019-09-04
+Author: Mustafa Ozgur Cingiz
+Maintainer: Mustafa Ozgur Cingiz <ozgurcingiz@gmail.com>
+Description: Network Inference and Analysis Package
+Depends:
+    R (>= 3.1.1),c3net,GAnet,minet,ProNet,igraph,gProfileR
+License: Bursa Technical University
+RoxygenNote: 5.0.1
+Suggests: testthat

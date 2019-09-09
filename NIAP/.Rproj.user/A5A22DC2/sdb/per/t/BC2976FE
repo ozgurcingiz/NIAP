@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{calculateRSquare}\n\\alias{calculateRSquare}\n\n\\title{Return R Squared value }\n\\usage{calculateRSquare(graph)}\n\\arguments{\n\n\\item{graph}{Igraph object refers gene coexpression network }\n\n}\n\\value{\n  \\code{calculateRSquare} Return R-Squared value and goodness of fitness value\n}\n\\description{\n  \\code{calculateRSquare} Return R Squared value. This function is utilized in calculateTopologicalFitness.R function.\n}\n\\examples{\n\ng = erdos.renyi.game(500, 350, type = \"gnm\")\nrsquareValue= calculateRSquare(g)\n\n\n}\n\\keyword{misc}\n\n",
+    "created" : 1567886126102.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2697328163",
+    "id" : "BC2976FE",
+    "lastKnownWriteTime" : 1567887283,
+    "path" : "C:/Program Files/RStudio/workspace/NIAP/man/calculateRSquare.Rd",
+    "project_path" : "man/calculateRSquare.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}

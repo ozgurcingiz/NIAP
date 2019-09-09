@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1567630723815.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FBEEA193",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "annotation",
+        "contentUrl" : "content?title=annotation&file=ce9fc13782414616bae576919016b3d9.htm",
+        "displayedObservations" : "259",
+        "displayedVariables" : 2,
+        "totalObservations" : "259",
+        "variables" : "2"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "#'@export\nnetworkInference <- function(dataset,anno,gnimethod)\n{\n  #library(\"GAnet\"); \n  #library(\"minet\");\n  #library(\"c3net\");\n \n  if(gnimethod==\"c3net\")\n  {\n    net <- c3net(dataset, network=FALSE);\n  }\n  if(gnimethod==\"aracne\")\n  {\n    mim <- build.mim(t(dataset), estimator=\"spearman\");\n    #mim  <- knnmi.all(dataset);\n    net=aracne(mim);\n  }\n  if(gnimethod==\"clr\")\n  {\n    #mim <- build.mim(t(dataset), estimator=\"spearman\");\n    mim  <- knnmi.all(dataset);\n    net=clr(mim);\n  }\n  if(gnimethod==\"mrnet\")\n  {\n    #mim <- build.mim(t(dataset), estimator=\"spearman\");\n    mim  <- knnmi.all(dataset);\n    net=mrnet(mim);\n  }\n  if(gnimethod==\"wgcna\")\n  {\n    #thrs=pickSoftThreshold(t(dataset), dataIsExpr = TRUE, RsquaredCut = 0.9,  powerVector = c(seq(1, 10, by = 1), seq(12, 20, by = 2)),  removeFirst = FALSE, nBreaks = 10, blockSize = NULL,  corFnc = cor, corOptions = list(use = 'p'),  networkType = \"unsigned\", moreNetworkConcepts = FALSE, verbose = 0, indent = 0);\n    \n    net=adjacency(datExpr=t(dataset),type = \"unsigned\",power=7) ; # gexp icin power 7, r.sq degeri 0.9'dan buyuk ilk deger\n    net=adjacency(datExpr=t(dataset),type = \"unsigned\",power=8) ; # rna icin power 8, r.sq degeri 0.9'dan buyuk ilk deger\n  }\n  \n  indices=which(net>0,arr.ind=TRUE); #indices=which(net>0,arr.ind=TRUE); indices=which(mim>0,arr.ind=TRUE)\n  \n  \n  indices=ganet.UniqNetSimp(indices);\n  class(indices)=\"numeric\";\n  #rownamesAll=as.matrix(rownames(pn_priors));\n  #firstColumn=as.matrix(rownamesAll[indices[,1],1]);\n  firstColumn=as.matrix(anno[indices[,1],2]); # rna'da 1,gene exp'de 2 olacak rna-seq 1 olacak\n  #secondColumn=as.matrix(rownamesAll[indices[,2],1]);\n  secondColumn=as.matrix(anno[indices[,2],2]);  #rna'da 1,  gene exp'de 2 olacak rna-seq 1 olacak\n  interactions=cbind(firstColumn,secondColumn);\n  interactions[,1]=toupper(interactions[,1]);\n  interactions[,2]=toupper(interactions[,2]);\n  ind=which(as.matrix(interactions[,1])!=as.matrix(interactions[,2]));\n  interactions=interactions[ind,];\n  interactions=ganet.UniqNetSimp(interactions);\n  dosya=paste(gnimethod,\".txt\");\n  #write.table(interactions,dosya); \n  \n  # rm(list = setdiff(ls(), lsf.str()))\n  \n  interactions\n  \n  \n  \n}\n",
+    "created" : 1567633965753.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2247342312",
+    "id" : "E256B8AD",
+    "lastKnownWriteTime" : 1567886406,
+    "path" : "C:/Program Files/RStudio/workspace/NIAP/R/networkInference.R",
+    "project_path" : "R/networkInference.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

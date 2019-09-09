@@ -1,0 +1,17 @@
+{
+    "contents" : "#'@export\ncalculateTopologicalFitness <- function (mypath=\"\")\n{\n  #mypath=paste(getwd(),\"/\",mypath,sep=\"\");\n  #library(igraph);\n  \n  mypath=choose.dir(default = \"\", caption = \"Select folder\")\n  \n  file_list=list.files(path = mypath, pattern = NULL, all.files = TRUE,full.names = TRUE, recursive = TRUE,ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE);\n  fileCount=length(file_list);\n  \n  \n  #wholeInfo=matrix(data=NA,nrow=50000,ncol=10);\n  topologicInfo=matrix(data=NA,nrow=fileCount,ncol=4);\n  counter=0;\n  \n  \n  for (file in file_list)    \n  {\n    \n    counter=counter+1;\n    \n    #temp_dataset <-read.table(file, header=TRUE, quote=\"\\\"\"); # temp_dataset <-read.table(file, header=TRUE, sep=\"\\t\");\n    \n    ########################\n    #file_name=basename(file);\n  \n    #full_name=paste(mypath,\"/\",file_name,sep=\"\")\n    #jName=substr(file_name,1,nchar(file_name)-4)\n    \n    #load(file=full_name) \n    \n    #temp_dataset=get(jName)\n    \n    ######################################\n    \n    \n    temp_dataset <-read.table(file, header=TRUE, quote=\"\\\"\"); # temp_dataset <-read.table(file, header=TRUE, sep=\"\\t\");\n    \n    \n    if(nrow(temp_dataset)==0) next;\n    file_name=basename(file);\n    #print(file_name);\n    #file_data=as.vector(as.matrix(temp_dataset));\n    G <- graph.data.frame(temp_dataset,directed=FALSE);\n    # A<-as_adjacency_matrix(G,type=\"both\",names=TRUE,sparse=FALSE,attr=NULL); # ONEMLIIIII\n    \n    ##########################################TOPOLOGICAL FEATURE EXTRACTION #####################\n    \n    #     topVal=topology_simple(G);\n    #     \n    #     numNode=topVal[1][[1]];\n    #     numEdge=topVal[2][[1]];\n    #     avgNumNeigh=topVal[6][[1]];\n    #     diamet= topVal[8][[1]];\n    #     density= topVal[9][[1]];\n    #     cluscoef=topVal[10][[1]];\n    \n    #mydegree<-degree(G);\n    d<-topology_degree(G); #d<-topology_degree(G,power.law=TRUE);\n    mypower<-power.law.fit(d[,2]);\n    \n    rsquare=calculateRSquare (G);\n    \n    #mypower<-power.law.fit(mydegree);\n    \n    \n    topologicInfo[counter,1]= file_name;\n    topologicInfo[counter,2]= mypower$KS.stat;\n    topologicInfo[counter,3]= mypower$KS.p;\n    topologicInfo[counter,4]= rsquare;\n    #     topologicInfo[counter,5]= diamet;\n    #     topologicInfo[counter,6]= density;\n    #     topologicInfo[counter,7]= cluscoef;\n    colnames(topologicInfo)=c(\"file_name\",\"KS.stat\",\"KS.p\",\"rsquare\");\n    \n    \n  }\n  \n  return (topologicInfo);  \n  \n  \n  \n  \n}",
+    "created" : 1567645224636.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3490476452",
+    "id" : "7FA078B",
+    "lastKnownWriteTime" : 1567890489,
+    "path" : "C:/Program Files/RStudio/workspace/NIAP/R/calculateTopologicalFitness.R",
+    "project_path" : "R/calculateTopologicalFitness.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

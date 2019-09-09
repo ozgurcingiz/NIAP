@@ -1,0 +1,5 @@
+network_example_folder consists of example gene coexpression networks.
+This file path is used from "topologicalBiologicalEvaluation.R", "literatureOverlapAnalysis.R"
+and "calculateTopologicalFitness.R" as mypath="" parameter.
+
+So this folder is an sample folder that contains various gene networks.

@@ -1,0 +1,16 @@
+{
+    "contents" : "\\name{networkOne}\n\\alias{networkOne}\n\n\\title{Sample gene coexpression network}\n\\usage{data(networkOne)}\n\\arguments{\n  \\item{networkOne}{mRNA gene expression dataset}\n}\n\\value{\n  \\code{networkOne} returns gene coexpression network\n}\n\\description{\n  \\code{networkOne}Consist of two columns. These columns gives gene- gene interactions\n}\n\\details{\n            Consist of two columns. These columns gives gene- gene interactions.\n }\n\n\\keyword{misc}\n\n",
+    "created" : 1567875361994.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1535279840",
+    "id" : "74BF32F2",
+    "lastKnownWriteTime" : 1567887224,
+    "path" : "C:/Program Files/RStudio/workspace/NIAP/man/networkOne.Rd",
+    "project_path" : "man/networkOne.Rd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_doc"
+}
